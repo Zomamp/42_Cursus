@@ -13,19 +13,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "libft.h"
+#include <stdint.h>    
 
 void *ft_calloc(size_t nmemb, size_t size)
 {
-    int tab;
-    int stock;
+    unsigned char *ptr;
+    void    *begin;
+    size_t  i;
     
-    stock = nmemb * size;
-    tab = malloc((nmemb * size) * sizeof(int));
-    if (!tab)
+    i = 0;
+    begin = malloc(nmemb * size);
+    ptr = (unsigned char *)begin;
+    if (!begin)
         return (NULL);
-    if (stock > tab)
-        return (1);
-    if (nmemb == 0 || size == 0)
+    if (nmemb == SIZE_MAX && size == SIZE_MAX)
         return (NULL);
-    ft_bzero(tab, (nmemb * size));
+    
+    while (i < (nmemb * size))
+    {
+        ptr[i] = 0;
+        i++;
+    }
+    return (begin);
 }
