@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zo-rakot <zo-rakot@student.42antananari    +#+  +:+       +#+        */
+/*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 10:52:19 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/01/30 21:30:58 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/01/31 04:33:38 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,12 @@ int	ft_atoi(const char *nptr)
 	result = 0;
 	i = 0;
 	sign = 1;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) && nptr[i] == 32)
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
 		i++;
-	while ((nptr[i] == '+') || (nptr[i] == '-'))
+	if ((nptr[i] == '+') || (nptr[i] == '-'))
 	{
 		if (nptr[i] == '-')
 			sign *= -1;
-		else
-			return (0);
 		i++;
 	}
 	while (nptr[i] >= 48 && nptr[i] <= 57)
@@ -38,3 +36,5 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * sign);
 }
+
+
