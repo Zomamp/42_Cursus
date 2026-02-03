@@ -6,7 +6,7 @@
 /*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 17:39:47 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/01/31 04:41:29 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/02/03 00:19:14 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s);
 void	*ft_calloc(size_t nmemb, size_t size);
 char    *ft_strtrim(char const *s1, char const *set);
-void *ft_calloc(size_t nmemb, size_t size);
+void    *ft_calloc(size_t nmemb, size_t size);
+char    **ft_split(char const *s, char c);
 #endif
