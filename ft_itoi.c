@@ -6,11 +6,18 @@
 /*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 04:29:31 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/02/03 04:29:37 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/02/03 04:46:30 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char    *ft_itoa(int n)
 {
-    
+    int i;
+    int result;
+
+    result = 0;
+    if (n >= 0 && n <= 127)
+    {
+        result = (result % 10);
+    }
 }
