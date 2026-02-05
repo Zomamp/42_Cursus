@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/03 04:29:31 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/02/03 04:46:30 by zo-rakot         ###   ########.fr       */
+/*   Created: 2026/02/04 21:39:38 by zo-rakot          #+#    #+#             */
+/*   Updated: 2026/02/04 23:10:37 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_itoa(int n)
-{
-    int i;
-    int result;
+#include "libft.h"
 
-    result = 0;
-    if (n >= 0 && n <= 127)
-    {
-        result = (result % 10);
-    }
+void    ft_lstadd_front(t_list **lst, t_list *new)
+{
+    new->next = *lst;
+    *lst = new;
 }

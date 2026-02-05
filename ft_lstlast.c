@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/26 08:38:41 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/02/04 15:30:35 by zo-rakot         ###   ########.fr       */
+/*   Created: 2026/02/05 15:24:07 by zo-rakot          #+#    #+#             */
+/*   Updated: 2026/02/05 15:37:18 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strdup(const char *s)
+t_list  *ft_lstlast(t_list *lst)
 {
-	int i;
-	char *dest;
+    t_list *tmp;
 
-	if (!s)
-		return (NULL);
-	i = 0;
-	while (s[i])
-		i++;
-	dest = malloc(i + 1);
-	if (!dest)
-		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		dest[i] = s[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+    if (!lst)
+        return (NULL);
+    tmp = lst;
+    while (tmp->next)
+        tmp = tmp->next;
+    return (tmp);
 }

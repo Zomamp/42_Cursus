@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/26 11:44:20 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/02/05 05:52:00 by zo-rakot         ###   ########.fr       */
+/*   Created: 2026/02/04 14:40:10 by zo-rakot          #+#    #+#             */
+/*   Updated: 2026/02/04 16:47:58 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdio.h>
+#include "libft.h"
 #include <stdlib.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
-	char	*dest;
-
-	if (!s)
-		return (NULL);
-	if (start >= ft_strlen(s))
-		return (ft_strdup(""));
-	if (start + len > ft_strlen(s))
-		len = ft_strlen(s) - start;
-	dest = malloc(sizeof(char) * (len + 1));
-	if (!dest)
-		return (NULL);
-	i = 0;
-	while (s[start] && i < len)
-	{
-		dest[i] = s[start];
-		start++;
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+    int i;
+    char *dest;
+    size_t len;
+    
+    len = ft_strlen(s);
+    i = 0;
+    dest = malloc(sizeof(char) * (len + 1));
+    if (!dest)
+        return (NULL);
+  /*   if (!s || !len)
+        return (0); */
+    while (s[i])
+    {
+        dest[i] = (f)(i, (char)s[i]);
+        i++;
+    }
+    dest[i] = '\0';
+    return (dest);
 }

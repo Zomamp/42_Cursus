@@ -6,7 +6,7 @@
 /*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 17:39:47 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/02/03 00:19:14 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/02/05 15:29:25 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,20 @@
 # define LIBFT_H
 
 # include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
 
+//----- Struct -------//
+
+typedef struct s_list
+{
+void *content;
+struct s_list *next;
+} t_list;
+
+//-----End struct-----//
+
+//--------SRC--------//
 int		ft_atoi(const char *nptr);
 void	*ft_bzero(void *ptr, unsigned int n);
 int		ft_isalnum(int c);
@@ -45,4 +58,16 @@ void	*ft_calloc(size_t nmemb, size_t size);
 char    *ft_strtrim(char const *s1, char const *set);
 void    *ft_calloc(size_t nmemb, size_t size);
 char    **ft_split(char const *s, char c);
+char    *ft_itoa(int n);
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void    ft_striteri(char *s, void (*f)(unsigned int, char*));
+void    ft_putchar_fd(char c, int fd);
+void    ft_putstr_fd(char *s, int fd);
+void    ft_putendl_fd(char *s, int fd);
+void    ft_putnbr_fd(int n, int fd);
+t_list  *ft_lstnew(void *content);
+void    ft_lstadd_front(t_list **lst, t_list *new);
+int     ft_lstsize(t_list *lst);
+t_list  *ft_lstlast(t_list *lst);
+//----------End SRC------------//
 #endif

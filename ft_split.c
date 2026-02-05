@@ -6,7 +6,7 @@
 /*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 17:20:18 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/02/03 04:28:50 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/02/05 14:28:36 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,10 @@ char    **ft_split(char const *s, char c)
         {
             tab[j++] = ft_put_word(s, start, i);
             if(!tab[j - 1])
-                return (ft_free(tab, j - 1), NULL);
+            {
+                ft_free(tab, j - 1);
+                return (NULL);
+            }
             start = -1;
         }
         i++;
@@ -90,3 +93,33 @@ char    **ft_split(char const *s, char c)
     tab[j] = NULL;
     return (tab);
 }
+/* #include <stdio.h>
+#include <stdlib.h>
+#include "libft.h"
+
+int main(void)
+{
+    char **result;
+    int i;
+    char *str = "bonjour le monde 42";
+    char sep = ' ';
+
+    result = ft_split(str, sep);
+    if (!result)
+    {
+        printf("Erreur ft_split\n");
+        return (1);
+    }
+
+    i = 0;
+    while (result[i])
+    {
+        printf("mot[%d] = \"%s\"\n", i, result[i]);
+        free(result[i]);
+        i++;
+    }
+    free(result);
+
+    return (0);
+}
+ */
