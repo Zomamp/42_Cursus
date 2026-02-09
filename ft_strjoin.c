@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zo-rakot <zo-rakot@student.42antananari    +#+  +:+       +#+        */
+/*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 12:32:45 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/01/30 21:31:35 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/02/10 00:32:53 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

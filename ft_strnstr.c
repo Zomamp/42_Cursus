@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zo-rakot <zo-rakot@student.42antananari    +#+  +:+       +#+        */
+/*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 08:00:11 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/01/30 21:31:56 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/02/09 23:37:28 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)

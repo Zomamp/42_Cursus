@@ -6,7 +6,7 @@
 /*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 10:52:19 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/01/31 04:33:38 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/02/06 07:04:34 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * sign);
 }
-
-

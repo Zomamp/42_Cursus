@@ -6,21 +6,17 @@
 /*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 08:38:41 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/02/04 15:30:35 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/02/07 23:04:19 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
-	int i;
-	char *dest;
+	int		i;
+	char	*dest;
 
-	if (!s)
-		return (NULL);
 	i = 0;
 	while (s[i])
 		i++;

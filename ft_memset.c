@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zo-rakot <zo-rakot@student.42antananari    +#+  +:+       +#+        */
+/*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 10:26:22 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/01/30 21:31:26 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/02/09 23:36:39 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t i;
-	unsigned char *p;
+	size_t			i;
+	unsigned char	*p;
 
 	p = s;
 	i = 0;

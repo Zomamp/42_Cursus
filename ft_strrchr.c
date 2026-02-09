@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zo-rakot <zo-rakot@student.42antananari    +#+  +:+       +#+        */
+/*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 15:54:51 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/01/30 15:59:58 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/02/09 23:37:33 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
