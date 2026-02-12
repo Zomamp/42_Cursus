@@ -6,7 +6,7 @@
 /*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 23:29:58 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/02/07 22:58:44 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/02/12 16:25:50 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 int	ft_lstsize(t_list *lst)
 {
 	int		i;
-	t_list	*tmp;
 
 	i = 0;
-	tmp = lst;
-	while (tmp)
+	if (!lst)
+		return (0);
+	while (lst)
 	{
-		tmp = tmp->next;
+		lst = lst->next;
 		i++;
 	}
 	return (i);

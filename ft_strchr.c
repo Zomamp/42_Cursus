@@ -6,7 +6,7 @@
 /*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 12:01:14 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/02/09 23:40:04 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/02/12 15:09:10 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *) &s[i]);
 		i++;
 	}
-	if (c == '\0')
+	if ((char)c == '\0')
 		return ((char *)&s[i]);
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 21:22:46 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/02/07 16:12:02 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/02/12 16:26:43 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*tmp;
-
-	tmp = lst;
-	while (tmp)
+	if (!lst || !f)
+		return ;
+	while (lst)
 	{
-		f(tmp->content);
-		tmp = tmp->next;
+		f(lst->content);
+		lst = lst->next;
 	}
 }

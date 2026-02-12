@@ -6,7 +6,7 @@
 /*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 17:39:47 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/02/10 00:31:34 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/02/12 15:05:25 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct s_list
 }	t_list;
 
 int		ft_atoi(const char *nptr);
-void	bzero(void *s, size_t n);
+void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int str);
