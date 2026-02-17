@@ -6,7 +6,7 @@
 /*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 19:37:00 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/02/07 15:55:50 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/02/16 23:26:09 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,24 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	char	*d;
-	char	*s;
-	size_t	i;
+	unsigned char		*d;
+	unsigned const char	*s;
 
-	i = 0;
-	s = (char *)src;
-	d = (char *)dest;
-	if (d == s || len == 0)
-		return (d);
-	if (d < s)
+	d = (unsigned char *)dest;
+	s = (unsigned const char *)src;
+	if (d > s)
 	{
-		while (i < len)
+		while (len--)
 		{
-			d[i] = s[i];
-			i++;
+			d[len] = s[len];
 		}
 	}
 	else
 	{
 		while (len--)
-			d[len] = s[len];
+		{
+			*d++ = *s++;
+		}
 	}
-	return (d);
+	return (dest);
 }

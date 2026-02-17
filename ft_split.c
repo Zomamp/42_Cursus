@@ -6,7 +6,7 @@
 /*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 17:20:18 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/02/12 14:44:26 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/02/15 23:37:42 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static void	ft_free(char **str, int i)
 	free(str);
 }
 
-int	ft_split_helper(char const *s, char c, char **tab)
+static int	ft_split_helper(char const *s, char c, char **tab)
 {
 	size_t	i;
 	size_t	j;
@@ -98,9 +98,6 @@ char	**ft_split(char const *s, char c)
 	if (!tab)
 		return (NULL);
 	if (!ft_split_helper(s, c, tab))
-	{
-		free(tab);
 		return (NULL);
-	}
 	return (tab);
 }
