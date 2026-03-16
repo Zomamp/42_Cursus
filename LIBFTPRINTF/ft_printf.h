@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zo-rakot <zo-rakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/07 10:22:25 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/01/28 21:10:49 by zo-rakot         ###   ########.fr       */
+/*   Created: 2026/02/20 12:22:48 by zo-rakot          #+#    #+#             */
+/*   Updated: 2026/03/16 22:30:11 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int str)
-{
-	if (str >= 0 && str <= 127)
-		return (1);
-	else
-		return (0);
-}
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include <unistd.h>
+# include <stdarg.h>
+
+int		ft_printf(const char *format, ...);
+int		ft_putchar(int c);
+int		ft_putstr(char *str);
+int		ft_putnbr(long nbr);
+int		ft_puthex(long nbr);
+int		ft_putptr(void *ptr);
+int		ft_put_u(unsigned long u);
+int		ft_putuphex(unsigned int nbr);
+int		ft_puti(long nbr);
+
+#endif

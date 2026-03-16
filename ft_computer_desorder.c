@@ -1,20 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_computer_desorder.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zo-rakot <zo-rakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/05 13:30:20 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/01/28 21:10:56 by zo-rakot         ###   ########.fr       */
+/*   Created: 2026/03/16 19:46:52 by zo-rakot          #+#    #+#             */
+/*   Updated: 2026/03/16 22:33:11 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int str)
+#include "ft_pushswap.h"
+
+double	ft_compute_disorder(t_list **stack_a)
 {
-	if (str >= 32 && str <= 126)
+	int		mistake;
+	int		total_pairs;
+	t_list 	*a;
+	t_list	*b;
+
+	mistake = 0;
+	total_pairs = 0;
+	a = *stack_a;
+	while (a)
 	{
-		return (1);
+		b = a->next;
+		while (b)
+		{
+			total_pairs++;
+			if (*(int *)a->content > *(int *)b->content)
+				mistake++;
+			b = b->next;
+		}
+		a = a->next;
 	}
-	return (0);
+	if (total_pairs == 0)
+		return (0.0);
+	return ((double)mistake / total_pairs);
 }

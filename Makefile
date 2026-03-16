@@ -1,50 +1,53 @@
-NAME = libft.a
 CC = cc
+
+NAME = push_swap
+
+SRC_FT_LIBFT = LIBFT/libft.a
+
+SRC_FT_PRINTF = LIBFTPRINTF/libftprintf.a
+
+SRC_PUSHSWAP = ft_utils.c main.c ft_sa_sb_ss_sort.c ft_ra_rb_rr_sort.c ft_rra_rrb_rrr.c ft_pa_pb.c ft_computer_desorder.c
+
 CFLAGS = -Wall -Wextra -Werror
-AR = ar rcs
 
-SRC =  ft_atoi.c ft_strlen.c ft_strrchr.c ft_strlcat.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_memchr.c ft_memcmp.c ft_isalpha.c ft_isdigit.c ft_isalnum.c \
-	ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_strlcpy.c ft_strlcat.c ft_strnstr.c ft_strdup.c ft_strjoin.c ft_substr.c \
-	ft_strtrim.c ft_calloc.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c ft_lstadd_front.c \
-	ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
-	
-OBJ = ${SRC:.c=.o}
+OBJ = ${SRC_PUSHSWAP:.c=.o}
 
-########################################
+RED     := \033[31m
+GREEN   := \033[32m
+RESET   := \033[0m
+BOLD    := \033[1m
+PINK 	:= \033[35m
 
-all : ${NAME}
+all: ${NAME}
 
-########################################
+${NAME}: ${OBJ} ${SRC_FT_LIBFT} ${SRC_FT_PRINTF}
+	@echo "Compiled with $(GREEN)$(BOLD)$(CFLAGS)$(RESET)"
+	${CC} ${SRC_PUSHSWAP} ${SRC_FT_LIBFT} ${SRC_FT_PRINTF} ${CFLAGS} -o ${NAME} -lm
+	@echo "$(PINK)$(BOLD)----------------------------------------"
+	@echo "     $(NAME) = NOW READY FOR USE!✅"
+	@echo "----------------------------------------$(RESET)"
 
-${NAME}: ${OBJ}
-	$(AR) ${NAME} ${OBJ}
-	@echo "Library created successfully"
+$(SRC_FT_LIBFT):
+	make -C LIBFT
 
-########################################
+$(SRC_FT_PRINTF):
+	make -C LIBFTPRINTF
 
-%.o:%.c
-	$(CC) ${CFLAGS} -c $<
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-########################################
-
-bonus: all	
-
-########################################
-
-clean: 
-	rm -f $(OBJ)
-
-########################################
+clean:
+	make clean -C LIBFT
+	make clean -C LIBFTPRINTF
+	rm -f ${OBJ}
+	@echo "${BLUE} ${BOLD} ${OBJ} ${RESET} .o Cleaned ✅"
 
 fclean: clean
-	rm -f $(NAME)
-
-########################################
+	make fclean -C LIBFT
+	make fclean -C LIBFTPRINTF
+	rm -f ${NAME}
+	@echo "$(BLUE) $(BOLD)$(NAME) $(RESET) Clean ✅"
 
 re: fclean all
 
-#######################################
-
-.PHONY : fclean re all bonus clean
-
-#######################################
+.PHONY: fclean clean re all

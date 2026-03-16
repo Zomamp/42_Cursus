@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
+/*   By: zo-rakot <zo-rakot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/05 13:21:04 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/02/07 21:27:28 by zo-rakot         ###   ########.fr       */
+/*   Created: 2026/02/21 00:01:21 by zo-rakot          #+#    #+#             */
+/*   Updated: 2026/03/06 21:49:31 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "ft_printf.h"
+
+int	ft_putptr(void *ptr)
 {
-	if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')))
-		return (0);
-	else
-		return (1);
+	int	count;	
+
+	count = 0;
+	if (!ptr)
+		return (write (1, "(nil)", 5));
+	count = write (1, "0x", 2);
+	count += ft_puthex((unsigned long)ptr);
+	return (count);
 }

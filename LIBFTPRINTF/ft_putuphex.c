@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putuphex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
+/*   By: zo-rakot <zo-rakot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/04 17:01:49 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/02/14 02:49:53 by zo-rakot         ###   ########.fr       */
+/*   Created: 2026/02/20 21:16:26 by zo-rakot          #+#    #+#             */
+/*   Updated: 2026/03/07 06:26:51 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_putuphex(unsigned int nbr)
 {
-	long	nb;
+	int		count;
+	char	*base;
 
-	nb = n;
-	if (nb < 0)
-	{
-		write(fd, "-", 1);
-		nb = -nb;
-	}
-	if (nb >= 10)
-		ft_putnbr_fd(nb / 10, fd);
-	ft_putchar_fd((nb % 10) + '0', fd);
+	count = 0;
+	base = "0123456789ABCDEF";
+	if (nbr >= 16)
+		count += ft_putuphex(nbr / 16);
+	count += write(1, &base[nbr % 16], 1);
+	return (count);
 }

@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_put_u.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zo-rakot <:zo-rakot@student.42antananar    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/21 12:01:14 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/02/12 15:09:10 by zo-rakot         ###   ########.fr       */
+/*   Created: 2026/02/20 16:00:36 by zo-rakot          #+#    #+#             */
+/*   Updated: 2026/02/20 20:18:32 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_put_u(unsigned long u)
 {
-	int	i;
+	int	count;
 
-	i = 0;
-	while (s[i] != '\0')
+	count = 0;
+	if (u > 9)
 	{
-		if (s[i] == (char) c)
-			return ((char *) &s[i]);
-		i++;
+		count += ft_putnbr(u / 10);
 	}
-	if ((char)c == '\0')
-		return ((char *)&s[i]);
-	return (NULL);
+	count += ft_putchar((u % 10) + '0');
+	return (count);
 }
