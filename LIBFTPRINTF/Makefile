@@ -2,7 +2,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = ft_printf.c ft_utils.c ft_put_u.c ft_putuphex.c ft_putptr.c
+SRC = ft_printf.c ft_utils.c ft_put_u.c ft_putuphex.c ft_putptr.c ft_double.c
 
 OBJ = ${SRC:.c=.o}
 

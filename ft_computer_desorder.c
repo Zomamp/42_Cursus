@@ -6,7 +6,7 @@
 /*   By: zo-rakot <zo-rakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 19:46:52 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/03/16 22:33:11 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/03/18 00:37:03 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ double	ft_compute_disorder(t_list **stack_a)
 	}
 	if (total_pairs == 0)
 		return (0.0);
-	return ((double)mistake / total_pairs);
+	return (((double)mistake / total_pairs) * 100);
 }

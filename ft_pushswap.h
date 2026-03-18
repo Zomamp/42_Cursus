@@ -6,7 +6,7 @@
 /*   By: zo-rakot <zo-rakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 21:19:13 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/03/17 00:17:45 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/03/18 07:20:52 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 #include "LIBFTPRINTF/ft_printf.h"
 t_list		*ft_add_stack(char **argv, int argc);
 void		ft_print_list(t_list *stack_a);
+void		ft_rotate(t_list **stack);
+void		ft_switch(t_list **stack);
+void		ft_rotate_reverse(t_list **stack);
 void		ft_sa(t_list **stack);
 void		ft_sb(t_list **stack);
 void		ft_ss(t_list **stack_a, t_list **stack_b);

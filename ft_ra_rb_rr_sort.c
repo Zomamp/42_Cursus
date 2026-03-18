@@ -6,13 +6,13 @@
 /*   By: zo-rakot <zo-rakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 23:52:11 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/03/16 07:28:14 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/03/18 07:19:04 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pushswap.h"
 
-void	ft_ra(t_list **stack)
+void	ft_rotate_reverse(t_list **stack)
 {
 	t_list	*first;
 	t_list	*second;
@@ -28,13 +28,21 @@ void	ft_ra(t_list **stack)
 	second->next = first;
 }
 
+void	ft_ra(t_list **stack)
+{
+	ft_rotate_reverse(stack);
+	ft_putendl_fd("ra", 1);
+}
+
 void	ft_rb(t_list **stack)
 {
-	ft_ra(stack);
+	ft_rotate_reverse(stack);
+	ft_putendl_fd("rb", 1);
 }
 
 void	ft_rr(t_list **stack_a, t_list **stack_b)
 {
 	ft_ra(stack_a);
 	ft_rb(stack_b);
+	ft_putendl_fd("rr", 1);
 }

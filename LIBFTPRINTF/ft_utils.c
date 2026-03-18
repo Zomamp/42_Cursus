@@ -6,7 +6,7 @@
 /*   By: zo-rakot <zo-rakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 01:01:07 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/03/10 01:01:11 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/03/18 00:04:56 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +41,23 @@ int	ft_putstr(char *str)
 	return (count);
 }
 
-int	ft_putnbr(long nbr)
+int	ft_putnbr(int nbr)
 {
-	long	count;
+	char	c;
+	int		count;
 
 	count = 0;
-	if (!nbr)
-		return (-1);
+	if (nbr == -2147483648)
+		return (write(1, "-2147483648", 11));
 	if (nbr < 0)
 	{
 		count += write(1, "-", 1);
 		nbr = -nbr;
 	}
-	if (nbr > 9)
+	if (nbr >= 10)
 		count += ft_putnbr(nbr / 10);
-	count += ft_putchar((nbr % 10) + '0');
+	c = (nbr % 10) + '0';
+	count += write(1, &c, 1);
 	return (count);
 }
 

@@ -6,7 +6,7 @@
 /*   By: zo-rakot <zo-rakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 12:13:09 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/03/16 22:30:03 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/03/17 23:22:05 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ static	int	ft_convert(char s, va_list ap)
 		count += ft_putuphex(va_arg(ap, unsigned int));
 	else if (s == 'i')
 		count += ft_puti(va_arg(ap, int));
+	else if (s == 'f')
+		count +=  ft_double(va_arg(ap, double));
 	else if (s == '%')
 		count += write(1, "%", 1);
 	return (count);
