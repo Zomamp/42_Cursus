@@ -6,7 +6,7 @@
 /*   By: zo-rakot <zo-rakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 22:14:43 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/03/18 07:21:48 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/03/22 07:47:05 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ int	main (int argc, char **argv)
 	}
 	ft_printf("The stack is created : ");
 
+	/*********INDEXION *******************************/
+
+	ft_set_index(&stack_a, ft_lstsize(stack_a));
+		
 	/*****************DISORDERS***********************/
 	double d = ft_compute_disorder(&stack_a);
 	ft_putchar('\n');
@@ -36,6 +40,7 @@ int	main (int argc, char **argv)
 	/*****************SIMPLE***********************/
 	ft_putchar('\n');
 	ft_bubble_sort(&stack_a);
+	ft_print_list(stack_a);
 	
 	// clear all t_list for no leaks
 	ft_lstclear(&stack_a, free);

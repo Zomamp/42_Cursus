@@ -7,7 +7,7 @@ SRC_FT_LIBFT = LIBFT/libft.a
 SRC_FT_PRINTF = LIBFTPRINTF/libftprintf.a
 
 SRC_PUSHSWAP = ft_utils.c main.c ft_sa_sb_ss_sort.c ft_ra_rb_rr_sort.c ft_rra_rrb_rrr.c ft_pa_pb.c ft_computer_desorder.c \
-				ft_simple.c
+				ft_simple.c ft_set_index.c
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -30,9 +30,15 @@ ${NAME}: ${OBJ} ${SRC_FT_LIBFT} ${SRC_FT_PRINTF}
 
 $(SRC_FT_LIBFT):
 	make -C LIBFT
+	@echo "$(GREEN)$(BOLD)----------------------------------------"
+	@echo "     ${SRC_FT_LIBFT} = NOW READY FOR USE!✅"
+	@echo "----------------------------------------$(RESET)"
 
 $(SRC_FT_PRINTF):
 	make -C LIBFTPRINTF
+	@echo "$(GREEN)$(BOLD)----------------------------------------"
+	@echo "     ${SRC_FT_PRINTF} = NOW READY FOR USE!✅"
+	@echo "----------------------------------------$(RESET)"
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

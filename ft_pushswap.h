@@ -6,7 +6,7 @@
 /*   By: zo-rakot <zo-rakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 21:19:13 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/03/18 07:20:52 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/03/22 07:33:17 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "LIBFT/libft.h"
 #include "LIBFTPRINTF/ft_printf.h"
+#include <limits.h>
 t_list		*ft_add_stack(char **argv, int argc);
 void		ft_print_list(t_list *stack_a);
 void		ft_rotate(t_list **stack);
@@ -32,5 +33,11 @@ void		ft_rrr(t_list **stack_a, t_list **stack_b);
 void		ft_pa(t_list **stack_a, t_list **stack_b);
 void		ft_pb(t_list **stack_a, t_list **stack_b);
 double		ft_compute_disorder(t_list **stack_a);
+void		ft_simple_sort(t_list **stack);
+int			ft_find_bigest(t_list **stack);
+void		ft_is_five(t_list **stack_a, t_list **stack_b);
+void		ft_is_three(t_list **stack);
+void		ft_set_index(t_list **stack, int link_size);
+int			ft_is_sorted (t_list **stack);
 void		ft_bubble_sort(t_list **stack);
 # endif
