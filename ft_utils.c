@@ -6,7 +6,7 @@
 /*   By: zo-rakot <zo-rakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 21:44:36 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/03/22 07:25:29 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/03/23 21:13:31 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ void	ft_print_list(t_list *stack_a)
 	// while stack_a exist
 	while (stack_a)
 	{
-		ft_printf("%d", *(int *)stack_a->content);
+		ft_printf("%d ", *(int *)stack_a->content);
 		stack_a = stack_a->next;
-	}	
+	}
 }
 
 int	ft_find_bigest(t_list **stack)
@@ -75,7 +75,7 @@ int	ft_find_bigest(t_list **stack)
 	return (big);
 }
 
-int	ft_is_sorted (t_list **stack)
+int	ft_is_sorted(t_list **stack)
 {
 	t_list	*tmp;
 
@@ -89,4 +89,9 @@ int	ft_is_sorted (t_list **stack)
 		tmp = tmp->next;
 	}
 	return (1);
+}
+
+void	ft_count_hits(t_count *c)
+{
+	c->count++;
 }

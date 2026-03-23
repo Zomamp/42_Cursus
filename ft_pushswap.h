@@ -6,7 +6,7 @@
 /*   By: zo-rakot <zo-rakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 21:19:13 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/03/22 07:33:17 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/03/23 21:13:46 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,5 @@ void		ft_is_three(t_list **stack);
 void		ft_set_index(t_list **stack, int link_size);
 int			ft_is_sorted (t_list **stack);
 void		ft_bubble_sort(t_list **stack);
+void		ft_count_hits(t_count *c);
 # endif

@@ -6,12 +6,13 @@
 /*   By: zo-rakot <zo-rakot@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 23:31:41 by zo-rakot          #+#    #+#             */
-/*   Updated: 2026/03/22 07:33:56 by zo-rakot         ###   ########.fr       */
+/*   Updated: 2026/03/23 19:19:16 by zo-rakot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pushswap.h"
 
+// Trie de trois chiffres
 void	ft_is_three(t_list **stack)
 {
 	int	biggest;
@@ -25,6 +26,7 @@ void	ft_is_three(t_list **stack)
 		ft_sa(stack);
 }
 
+// Trie de 5 chiffres
 void	ft_is_five(t_list **stack_a, t_list **stack_b)
 {
 	int pushed;
@@ -97,13 +99,14 @@ void	ft_simple_sort(t_list **stack)
 
 	size = ft_lstsize(*stack);
 
-	if (size == 3)
+	if (!ft_is_sorted(stack) && size <= 3)
 		ft_is_three(stack);
-	else if (size == 5)
+	else if (!ft_is_sorted(stack) && size <= 5)
 	{
 		stack_b = NULL;
 		ft_is_five(stack, &stack_b);
 	}
 	else
-		ft_bubble_sort(stack);
+		if (!ft_is_sorted(stack))
+			ft_bubble_sort(stack);
 }
